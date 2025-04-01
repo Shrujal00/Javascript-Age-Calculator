@@ -10,7 +10,7 @@
 
 
 body{
-    background-image: linear-gradient(135deg, #4203a9, #90bafc);
+    background-image: linear-gradient(135deg, #a93d03, #fc9090);
     background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
@@ -22,4 +22,41 @@ body{
     flex-direction: column;
     margin: 100px;
     gap: 30px;
+}
+
+.colored{
+    color: yellow;
+}
+
+.dateinput{
+    background-color: rgba(255, 255, 255, 0.505);
+    margin: 40px 0;
+    padding: 35px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    gap: 60px;
+}
+
+
+
+.date{
+    width: 30vh;
+    height: 7vh;
+    border-radius: 10px;
+}
+
+.calculate{
+    width: 20vh;
+    height: 5vh;
+    border-radius: 10px;
+    border: none;
+    background-color: yellow;
+    cursor: pointer;
+    transition: all ease 1s;
+}
+
+.calculate:hover{
+    background-color: rgba(255, 255, 0, 0.658);
 }
