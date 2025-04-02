@@ -1,20 +1,22 @@
-let userInput;
-let date;
-let years;
-let months;
-let days;
+document.addEventListener("DOMContentLoaded", function () {
+    let dateInput = document.getElementById("date");
 
-
-
-userInput = document.getElementById("date").value;
-userlnput.max = new Date();
-date = new Date(userInput);
-
+    // Set max date to today so users cannot enter future dates
+    let today = new Date();
+    let maxDate = today.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+    dateInput.setAttribute("max", maxDate);
+});
 
 function calculate() {
     let userInput = document.getElementById("date").value;
-    let date = new Date(userInput);  // Get the latest selected date
-    let today = new Date();  // Get today's date
+    
+    if (!userInput) {
+        alert("Please select a date!");
+        return;
+    }
+
+    let date = new Date(userInput);  
+    let today = new Date();  
 
     let years = today.getFullYear() - date.getFullYear();
     let months = today.getMonth() - date.getMonth();
@@ -29,7 +31,8 @@ function calculate() {
         months += 12;
     }
 
-    document.querySelector(".dispage span:nth-child(1)").innerText = years;
-    document.querySelector(".dispage span:nth-child(2)").innerText = months;
-    document.querySelector(".dispage span:nth-child(3)").innerText = days;
+    let spans = document.querySelectorAll(".dispage .colored");
+    spans[0].innerText = years;   // Years
+    spans[1].innerText = months;  // Months
+    spans[2].innerText = days;    // Days
 }
